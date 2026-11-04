@@ -11,6 +11,7 @@ export default {
         brass: { DEFAULT: 'rgb(var(--brass) / <alpha-value>)', light: 'rgb(var(--brass-light) / <alpha-value>)', deep: 'rgb(var(--brass-deep) / <alpha-value>)' },
         moss: 'rgb(var(--moss) / <alpha-value>)',
         cafe: 'rgb(var(--cafe) / <alpha-value>)',
+        tint: 'rgb(var(--tint) / <alpha-value>)',
         line: { DEFAULT: 'rgb(var(--line) / <alpha-value>)', strong: 'rgb(var(--line-strong) / <alpha-value>)' },
         danger: 'rgb(var(--danger) / <alpha-value>)',
       },

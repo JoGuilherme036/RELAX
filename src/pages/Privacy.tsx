@@ -18,7 +18,7 @@ export default function Privacy() {
         <p>O site não usa cookies de rastreamento. O mapa do Google só é carregado se você tocar em “Mostrar mapa”. Links para WhatsApp, Instagram e aplicativos de rota levam a serviços de terceiros com políticas próprias.</p>
         <h2 className="font-display text-2xl italic text-ivory">Seus direitos</h2>
         <p>Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento pelo e-mail <a className="text-brass-light underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a> ou pelo WhatsApp.</p>
-        {site.demo && <p className="rounded-xl border border-brass/30 bg-brass/10 px-4 py-3 text-[13px] text-brass-light">Versão de demonstração: as reservas feitas aqui ficam salvas apenas no seu aparelho.</p>}
+        {site.demo && <p className="rounded-xl border border-brass/30 bg-tint px-4 py-3 text-[13px] text-brass-light">Versão de demonstração: as reservas feitas aqui ficam salvas apenas no seu aparelho.</p>}
       </div>
     </main>
   );

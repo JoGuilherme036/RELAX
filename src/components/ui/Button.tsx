@@ -12,7 +12,7 @@ const variants: Record<Variant, string> = {
   primary:
     'bg-brass text-ink hover:bg-brass-light',
   ghost: '!border-line-strong bg-transparent text-ivory hover:bg-ivory/5',
-  quiet: 'text-brass hover:bg-brass/10',
+  quiet: 'text-brass hover:bg-tint',
 };
 
 export const cls = ({ variant = 'primary', size = 'md', className = '' }: Pick<Common, 'variant' | 'size' | 'className'>) =>

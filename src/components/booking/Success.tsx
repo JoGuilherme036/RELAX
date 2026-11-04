@@ -52,7 +52,7 @@ export function Success({ booking }: { booking: Booking }) {
         Agendamento <em className="brass-text">confirmado.</em>
       </h1>
       {bookingApi.mode === 'demo' && (
-        <p className="mx-auto mt-3 max-w-sm rounded-xl border border-brass/30 bg-brass/10 px-4 py-2 text-[13px] text-brass-light">
+        <p className="mx-auto mt-3 max-w-sm rounded-xl border border-brass/30 bg-tint px-4 py-2 text-[13px] text-brass-light">
           Modo demonstração: este agendamento ficou salvo só neste aparelho e não chegou à barbearia.
         </p>
       )}
@@ -64,7 +64,7 @@ export function Success({ booking }: { booking: Booking }) {
             <p className="mt-1 select-all font-mono text-2xl tracking-widest">{booking.code}</p>
           </div>
           <button onClick={copy} className="grid h-12 w-12 place-items-center rounded-full border hairline" aria-label="Copiar código">
-            <Icon name={copied ? 'check' : 'copy'} className={copied ? 'text-emerald-400' : ''} />
+            <Icon name={copied ? 'check' : 'copy'} className={copied ? 'text-brass' : ''} />
           </button>
         </div>
         <dl className="mt-5 space-y-2 text-[15px]">

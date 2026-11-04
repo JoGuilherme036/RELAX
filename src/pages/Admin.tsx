@@ -24,8 +24,8 @@ const clock = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-dig
 const clockSec = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: site.timeZone });
 const statusLabel: Record<BookingStatus, string> = { confirmed: 'Confirmado', completed: 'Concluído', no_show: 'Faltou', cancelled: 'Cancelado' };
 const statusStyle: Record<BookingStatus, string> = {
-  confirmed: 'bg-emerald-400/15 text-emerald-300',
-  completed: 'bg-brass/20 text-brass-light',
+  confirmed: 'bg-tint text-brass',
+  completed: 'bg-tint text-brass-light',
   no_show: 'bg-danger/15 text-danger',
   cancelled: 'bg-ivory/10 text-muted line-through',
 };
@@ -92,7 +92,7 @@ function Login({ onSuccess }: { onSuccess: () => void }) {
           {state === 'loading' ? 'Entrando…' : 'Entrar'}
         </button>
         {bookingApi.mode === 'demo' && (
-          <p className="mt-4 rounded-xl border border-brass/30 bg-brass/10 px-3 py-2 text-[12px] text-brass-light">
+          <p className="mt-4 rounded-xl border border-brass/30 bg-tint px-3 py-2 text-[12px] text-brass-light">
             Modo demonstração: senha <b>{DEMO_ADMIN_PASSWORD}</b>. Os dados ficam só neste navegador.
           </p>
         )}
@@ -151,8 +151,8 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
               <p className="font-display text-lg italic">Agenda</p>
               <p className="flex items-center gap-1.5 text-[11px] text-muted" aria-live="polite">
                 <span className="relative flex h-1.5 w-1.5">
-                  {live && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />}
-                  <span className={`relative inline-flex h-1.5 w-1.5 rounded-full ${live || syncedAt ? 'bg-emerald-400' : 'bg-muted'}`} />
+                  {live && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brass opacity-70" />}
+                  <span className={`relative inline-flex h-1.5 w-1.5 rounded-full ${live || syncedAt ? 'bg-brass' : 'bg-muted'}`} />
                 </span>
                 {live ? 'Ao vivo' : syncedAt ? `Atualizado ${clockSec.format(syncedAt)}` : 'Conectando…'}
               </p>
@@ -192,7 +192,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
 
       <main id="conteudo" className="mx-auto max-w-6xl px-4 pt-6">
         {bookingApi.mode === 'demo' && (
-          <p className="mb-4 rounded-xl border border-brass/30 bg-brass/10 px-4 py-2 text-[13px] text-brass-light">
+          <p className="mb-4 rounded-xl border border-brass/30 bg-tint px-4 py-2 text-[13px] text-brass-light">
             Modo demonstração: abra o site em outra aba para ver os bloqueios aparecerem lá na hora.
           </p>
         )}
@@ -456,7 +456,7 @@ function BookSheet({ day, onClose, onCreated }: { day: string; onClose: () => vo
     return (
       <Sheet title="Agendado" onClose={onClose}>
         <div className="mt-5 space-y-4" aria-live="polite">
-          <p className="rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-[14px]">
+          <p className="rounded-xl border border-brass/30 bg-brass/10 px-4 py-3 text-[14px]">
             {done.customer.name} · {formatDayShort(done.day)} {dayOfMonth(done.day)} às {done.time} com {pro}. Já aparece em todos os aparelhos.
           </p>
           <p className="text-[13px] text-muted">
@@ -594,7 +594,7 @@ function BlockSheet({ day, onClose, onCreated }: { day: string; onClose: () => v
 
         {result ? (
           <div className="mt-5 space-y-4" aria-live="polite">
-            <p className="rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-[14px]">
+            <p className="rounded-xl border border-brass/30 bg-brass/10 px-4 py-3 text-[14px]">
               Bloqueio salvo em {result.created} {result.created === 1 ? 'dia' : 'dias'}. Já aparece como indisponível em todos os aparelhos.
             </p>
             {result.conflicts.length > 0 && (
@@ -645,7 +645,7 @@ function BlockSheet({ day, onClose, onCreated }: { day: string; onClose: () => v
                     ['day', 'Dia inteiro'],
                   ] as const
                 ).map(([id, label]) => (
-                  <button type="button" key={id} onClick={() => setMode(id)} aria-pressed={mode === id} className={`min-h-11 rounded-xl border text-[13px] font-semibold ${mode === id ? 'border-brass bg-brass/15 text-brass-light' : 'hairline'}`}>
+                  <button type="button" key={id} onClick={() => setMode(id)} aria-pressed={mode === id} className={`min-h-11 rounded-xl border text-[13px] font-semibold ${mode === id ? 'border-brass bg-tint text-brass-light' : 'hairline'}`}>
                     {label}
                   </button>
                 ))}

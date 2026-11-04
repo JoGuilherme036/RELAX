@@ -86,7 +86,7 @@ export default function ManageBooking() {
         <section aria-label="Detalhes" className="mt-6 rounded-2xl border hairline bg-ink-2/70 p-6">
           <div className="flex items-center justify-between">
             <p className="font-mono tracking-widest">{booking.code}</p>
-            <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${booking.status === 'confirmed' ? 'bg-emerald-400/15 text-emerald-300' : 'bg-danger/15 text-danger'}`}>
+            <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${booking.status === 'confirmed' ? 'bg-tint text-brass' : 'bg-danger/15 text-danger'}`}>
               {booking.status === 'confirmed' ? 'Confirmado' : 'Cancelado'}
             </span>
           </div>

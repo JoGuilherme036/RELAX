@@ -188,7 +188,7 @@ export default function Booking() {
           </div>
         )}
         {bookingApi.mode === 'demo' && !booking && step === 0 && (
-          <p className="mb-6 rounded-2xl border border-brass/30 bg-brass/10 px-4 py-3 text-[13px] text-brass-light">
+          <p className="mb-6 rounded-2xl border border-brass/30 bg-tint px-4 py-3 text-[13px] text-brass-light">
             Modo demonstração: as reservas ficam salvas apenas neste aparelho até a agenda online ser conectada.
           </p>
         )}

@@ -70,7 +70,7 @@ export function Menu({ open, onClose, onNavigate }: { open: boolean; onClose: ()
             transition={{ delay: 0.5 }}
           >
             <p className="flex items-center gap-2 text-sm text-muted">
-              <span className={`h-1.5 w-1.5 rounded-full ${status.short === 'Aberto agora' ? 'bg-emerald-400' : 'bg-muted'}`} />
+              <span className={`h-1.5 w-1.5 rounded-full ${status.short === 'Aberto agora' ? 'bg-brass' : 'bg-muted'}`} />
               {status.short} · {status.detail}
             </p>
             <LinkButton to="/agendar" size="lg" iconRight="arrowRight" className="w-full" onClick={onClose}>

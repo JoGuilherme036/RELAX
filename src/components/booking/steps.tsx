@@ -49,7 +49,7 @@ export function ServicesStep({ draft, update }: StepProps) {
                       aria-checked={on}
                       onClick={() => update({ serviceIds: toggleService(draft.serviceIds, s.id), time: null })}
                       className={`flex w-full items-start gap-4 rounded-2xl border p-4 text-left transition-[border-color,background-color] duration-200 ${
-                        on ? 'border-brass bg-brass/10' : 'hairline bg-ink-2/60 hover:border-brass/40'
+                        on ? 'border-brass bg-tint' : 'hairline bg-ink-2/60 hover:border-brass/40'
                       }`}
                     >
                       <span className={`mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-colors ${on ? 'border-brass bg-brass text-ink' : 'border-ivory/30'}`}>
@@ -88,7 +88,7 @@ export function ProStep({ draft, update }: StepProps) {
         role="radio"
         aria-checked={on}
         onClick={() => update({ proId: id, time: null })}
-        className={`flex w-full items-center gap-4 rounded-2xl border p-4 text-left transition-colors ${on ? 'border-brass bg-brass/10' : 'hairline bg-ink-2/60 hover:border-brass/40'}`}
+        className={`flex w-full items-center gap-4 rounded-2xl border p-4 text-left transition-colors ${on ? 'border-brass bg-tint' : 'hairline bg-ink-2/60 hover:border-brass/40'}`}
       >
         <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full border font-display text-xl italic ${on ? 'border-brass text-brass-light' : 'hairline text-ivory/80'}`}>
           {initials ?? <Icon name="sparkle" className="h-6 w-6 text-brass" />}

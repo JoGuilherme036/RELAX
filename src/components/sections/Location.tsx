@@ -41,17 +41,17 @@ export function Location() {
           <div className="rounded-2xl border hairline bg-ink p-6 md:p-8">
             <p className="flex items-center gap-3" aria-live="polite">
               <span className="relative flex h-3 w-3">
-                {status.open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />}
-                <span className={`relative inline-flex h-3 w-3 rounded-full ${status.open ? 'bg-emerald-400' : 'bg-muted'}`} />
+                {status.open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brass opacity-60" />}
+                <span className={`relative inline-flex h-3 w-3 rounded-full ${status.open ? 'bg-brass' : 'bg-muted'}`} />
               </span>
-              <span className="font-display text-3xl italic">{label.short}</span>
+              <span className="font-display text-3xl font-semibold">{label.short}</span>
               <span className="text-sm text-muted">{label.detail}</span>
             </p>
 
             <address className="mt-6 select-text not-italic">
               <span className="block text-lg">{site.address.street}</span>
               <span className="block text-muted">
-                {site.address.district}, {site.address.city}/{site.address.state} · {site.address.zip}
+                {site.address.city}/{site.address.state}
               </span>
             </address>
             <p className="mt-3 text-sm text-muted">{site.address.reference}</p>
@@ -62,7 +62,7 @@ export function Location() {
               <RouteBtn href={mapLinks.waze} label="Waze" icon="route" />
               <RouteBtn href={mapLinks.apple} label="Apple Mapas" icon="route" />
               <button onClick={copy} className="flex min-h-14 flex-col items-center justify-center gap-1 rounded-2xl border hairline text-[12px] transition-colors hover:border-brass/60">
-                <Icon name={copied ? 'check' : 'copy'} className={`h-[18px] w-[18px] ${copied ? 'text-emerald-400' : ''}`} />
+                <Icon name={copied ? 'check' : 'copy'} className={`h-[18px] w-[18px] ${copied ? 'text-brass' : ''}`} />
                 <span aria-live="polite">{copied ? 'Copiado!' : 'Copiar endereço'}</span>
               </button>
             </div>
@@ -75,7 +75,7 @@ export function Location() {
                 <div key={d} className={`flex items-center justify-between py-2.5 text-[15px] ${d === today ? 'text-ivory' : 'text-muted'}`}>
                   <dt className="flex items-center gap-2">
                     {weekdayNames[d]}
-                    {d === today && <span className="rounded-full bg-brass/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brass-light">Hoje</span>}
+                    {d === today && <span className="rounded-full bg-tint px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brass-light">Hoje</span>}
                   </dt>
                   <dd className="tabular-nums">{formatRanges(site.hours[d])}</dd>
                 </div>

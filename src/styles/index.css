@@ -15,6 +15,7 @@
   --brass-light: 58 92 73; /* brand, hover */
   --brass-deep: 31 52 40;
   --moss: 157 178 161; /* sage */
+  --tint: 231 238 230; /* verde muito claro para seleção e avisos */
   --cafe: 122 86 56;
   --danger: 154 58 40;
   --shadow-card: 0 1px 2px rgb(18 19 15 / 0.06), 0 8px 24px rgb(18 19 15 / 0.06);
@@ -38,6 +39,7 @@
   --brass-light: 196 218 201;
   --brass-deep: 94 119 101;
   --moss: 94 119 101;
+  --tint: 36 46 39;
   --cafe: 210 162 122;
   --danger: 238 154 133;
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.5), 0 8px 24px rgb(0 0 0 / 0.4);
@@ -103,7 +105,7 @@
     display: inline-block;
     width: 0.75em;
     height: 0.75em;
-    border-radius: 0.75em 0 0.75em 0;
+    border-radius: 50% 0;
     background: currentColor;
   }
   .brass-text {

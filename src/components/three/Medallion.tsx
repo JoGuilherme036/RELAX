@@ -116,8 +116,8 @@ function useMaterials() {
         bumpScale: 2.2,
         roughnessMap: tex(drawFace('rough', side)),
         roughness: 1,
-        metalness: 1,
-        envMapIntensity: 1.25,
+        metalness: 0.55,
+        envMapIntensity: 1.6,
       });
     const edgeBump = tex(drawEdge('bump'));
     edgeBump.wrapS = THREE.RepeatWrapping;
@@ -125,7 +125,7 @@ function useMaterials() {
     const edgeMap = tex(drawEdge('color'), true);
     edgeMap.wrapS = THREE.RepeatWrapping;
     edgeMap.repeat.set(2, 1);
-    const edge = new THREE.MeshStandardMaterial({ map: edgeMap, bumpMap: edgeBump, bumpScale: 3, metalness: 1, roughness: 0.32 });
+    const edge = new THREE.MeshStandardMaterial({ map: edgeMap, bumpMap: edgeBump, bumpScale: 3, metalness: 0.6, roughness: 0.35 });
     const front = face('front');
     const back = face('back');
     back.map!.rotation = back.bumpMap!.rotation = back.roughnessMap!.rotation = Math.PI / 2;
@@ -181,8 +181,8 @@ export default function Medallion({ reduced, active = true }: { reduced: boolean
       gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
       aria-hidden="true"
     >
-      <ambientLight intensity={0.15} />
-      <directionalLight position={[3, 4, 5]} intensity={1.4} color="#f4efe2" />
+      <ambientLight intensity={0.9} />
+      <directionalLight position={[3, 4, 5]} intensity={2} color="#f4efe2" />
       <Float speed={reduced ? 0 : 1.6} rotationIntensity={reduced ? 0 : 0.25} floatIntensity={reduced ? 0 : 0.6}>
         <Coin reduced={reduced} />
       </Float>

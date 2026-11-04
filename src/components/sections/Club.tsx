@@ -32,8 +32,8 @@ export function Club() {
   return (
     <section aria-labelledby="clube-title" className="relative z-10 overflow-hidden bg-ink-3 py-20 md:py-28">
       <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <div ref={stage} className="relative mx-auto aspect-square w-full max-w-[30rem]">
-          <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgb(var(--brass)/0.28),transparent_65%)] blur-2xl" />
+        <div ref={stage} className="relative mx-auto aspect-square w-full max-w-[16rem] sm:max-w-[22rem] lg:max-w-[30rem]">
+          <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgb(var(--moss)/0.45),transparent_65%)] blur-2xl" />
           {mounted.current && webgl.current ? (
             <Suspense fallback={<MedallionFallback />}>
               <Medallion reduced={reduced} active={near} />
@@ -48,11 +48,11 @@ export function Club() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {clubPlans.map((p, i) => (
               <Reveal key={p.id} delay={i * 0.08}>
-                <article className={`relative flex h-full flex-col rounded-2xl border p-6 ${'highlight' in p && p.highlight ? 'border-brass bg-brass/10' : 'hairline bg-ink-2'}`}>
+                <article className={`relative flex h-full flex-col rounded-2xl border p-6 ${'highlight' in p && p.highlight ? 'border-brass bg-ink-2 shadow-[var(--shadow-card)]' : 'hairline bg-ink-2'}`}>
                   {'highlight' in p && p.highlight && <span className="absolute -top-3 left-6 rounded-full bg-cafe px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-ink">Mais escolhido</span>}
                   <h3 className="font-display text-3xl font-semibold">{p.name}</h3>
-                  <p className="mt-1 font-display text-xl text-brass-light">{p.price}</p>
-                  <ul className="mt-5 flex-1 space-y-2.5 text-sm text-ivory/85">
+                  <p className="mt-2 text-[22px] font-bold leading-7 text-brass">{p.price}</p>
+                  <ul className="mt-5 flex-1 space-y-2.5 text-[15px] text-ivory/85">
                     {p.perks.map((perk) => (
                       <li key={perk} className="flex gap-2.5">
                         <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-brass" />
@@ -60,7 +60,7 @@ export function Club() {
                       </li>
                     ))}
                   </ul>
-                  <a href={whatsappLink(waMessages.plan(p.name))} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brass/50 text-[14px] font-semibold text-brass-light transition-colors hover:bg-brass hover:text-ink">
+                  <a href={whatsappLink(waMessages.plan(p.name))} target="_blank" rel="noopener noreferrer" className={`mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-md border text-[12.5px] font-semibold uppercase tracking-[0.14em] transition-colors ${'highlight' in p && p.highlight ? 'border-brass bg-brass text-ink hover:bg-brass-light' : 'border-line-strong text-ivory hover:bg-ivory/5'}`}>
                     <Icon name="whatsapp" className="h-[18px] w-[18px]" /> Quero assinar
                   </a>
                 </article>
