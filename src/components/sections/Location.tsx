@@ -31,7 +31,7 @@ export function Location() {
   };
 
   return (
-    <section id="local" aria-labelledby="local-title" className="relative z-10 scroll-mt-20 rounded-t-[2rem] bg-ink-2 pb-20 pt-20 md:rounded-t-[3rem] md:pb-28 md:pt-28">
+    <section id="local" aria-labelledby="local-title" className="relative z-10 scroll-mt-20 border-t hairline bg-ink-2 py-20 md:py-28">
       <div className="container-x" id="local-title">
         <SectionHeading chapter="IX" label="Localização" lines={['Venha', <em key="e" className="brass-text">sentar com a gente.</em>]} />
       </div>

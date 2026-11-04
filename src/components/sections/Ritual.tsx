@@ -1,8 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ritualSteps } from '@/config/content';
-import { useMediaQuery } from '@/hooks/useMisc';
-import { useMotionPref } from '@/hooks/useMotionPref';
 import { SectionHeading } from '../ui/SectionHeading';
 import { SmartImage } from '../ui/SmartImage';
 
@@ -20,37 +17,9 @@ function StepCard({ step, className = '' }: { step: (typeof ritualSteps)[number]
   );
 }
 
-/** Desktop: vertical scroll drives a pinned horizontal track. Mobile/reduced motion: native snap carousel. */
+/** Quatro etapas: grade no desktop, carrossel com snap no celular. */
 export function Ritual() {
-  const desktop = useMediaQuery('(min-width: 768px)');
-  const { reduced } = useMotionPref();
-  return desktop && !reduced ? <PinnedRitual /> : <SnapRitual />;
-}
-
-function PinnedRitual() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
-  const x = useTransform(scrollYProgress, [0.05, 0.95], ['0%', '-58%']);
-  const bar = useTransform(scrollYProgress, [0.05, 0.95], [0, 1]);
-  return (
-    <section id="ritual" ref={ref} aria-labelledby="ritual-title" className="relative z-10 h-[300vh] scroll-mt-20 bg-ink">
-      <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden">
-        <div className="container-x" id="ritual-title">
-          <SectionHeading chapter="IV" label="O ritual" lines={['Quatro tempos,', <em key="e" className="brass-text">nenhuma pressa.</em>]} />
-        </div>
-        <motion.div style={{ x }} className="mt-10 flex gap-6 pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
-          {ritualSteps.map((s) => (
-            <StepCard key={s.n} step={s} className="w-[min(30rem,38vw)] shrink-0" />
-          ))}
-        </motion.div>
-        <div className="container-x mt-8">
-          <div className="h-px w-full bg-ivory/10">
-            <motion.div style={{ scaleX: bar }} className="h-px origin-left bg-brass" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <SnapRitual />;
 }
 
 function SnapRitual() {
@@ -63,16 +32,16 @@ function SnapRitual() {
     if (card) setActive(Math.round(el.scrollLeft / (card.offsetWidth + 16)));
   };
   return (
-    <section id="ritual" aria-labelledby="ritual-title" className="relative z-10 scroll-mt-20 bg-ink py-20">
+    <section id="ritual" aria-labelledby="ritual-title" className="relative z-10 scroll-mt-20 bg-ink py-20 md:py-28">
       <div className="container-x" id="ritual-title">
         <SectionHeading chapter="IV" label="O ritual" lines={['Quatro tempos,', <em key="e" className="brass-text">nenhuma pressa.</em>]} />
       </div>
-      <div ref={track} onScroll={onScroll} className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-5 pb-2" aria-label="Etapas do ritual" tabIndex={0}>
+      <div ref={track} onScroll={onScroll} className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-5 pb-2 md:container-x md:grid md:snap-none md:grid-cols-4 md:overflow-visible md:px-0" aria-label="Etapas do ritual" tabIndex={0}>
         {ritualSteps.map((s) => (
-          <StepCard key={s.n} step={s} className="w-[82%] max-w-sm shrink-0 snap-center" />
+          <StepCard key={s.n} step={s} className="w-[82%] max-w-sm shrink-0 snap-center md:w-auto md:max-w-none" />
         ))}
       </div>
-      <div className="container-x mt-6 flex items-center gap-2" aria-hidden="true">
+      <div className="container-x mt-6 flex items-center gap-2 md:hidden" aria-hidden="true">
         {ritualSteps.map((s, i) => (
           <span key={s.n} className={`h-[3px] rounded-full transition-all duration-500 ${i === active ? 'w-10 bg-brass' : 'w-4 bg-ivory/20'}`} />
         ))}

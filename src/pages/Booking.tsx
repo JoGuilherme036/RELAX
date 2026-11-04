@@ -15,7 +15,6 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { Icon } from '@/components/ui/Icon';
 import { DetailsStep, ProStep, ReviewStep, ServicesStep, StepTransition, TimeStep, type FieldErrors } from '@/components/booking/steps';
 import { Success } from '@/components/booking/Success';
-import { asset } from '@/lib/asset';
 
 const steps = [
   { id: 'servicos', label: 'Serviço' },
@@ -160,11 +159,6 @@ export default function Booking() {
 
   return (
     <div className="relative min-h-[100svh]">
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-0">
-        <img src={asset('media/end-portrait.webp')} alt="" className="h-full w-full object-cover opacity-25 blur-sm" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/95 to-ink" />
-      </div>
-
       <header className="sticky top-0 z-30 border-b hairline bg-ink/85 pt-[env(safe-area-inset-top)] backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-2xl items-center gap-3 px-5">
           {!booking ? (

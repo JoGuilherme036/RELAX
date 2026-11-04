@@ -18,7 +18,7 @@ const items = [
 /** Galeria de artes conceituais da marca. Os textos dentro das imagens são estáticos; o título e o contexto ficam em HTML. */
 export function Gallery() {
   return (
-    <section id="galeria" aria-labelledby="galeria-title" className="relative z-10 scroll-mt-20 py-24 md:py-32">
+    <section id="galeria" aria-labelledby="galeria-title" className="relative z-10 scroll-mt-20 py-20 md:py-28">
       <div className="container-x" id="galeria-title">
         <SectionHeading chapter="—" label="Galeria" lines={['Viva a', <em key="e" className="brass-text">experiência Relax.</em>]} intro="Serviços, ambiente, produtos e presentes: um panorama da casa." />
         <ul className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-5">

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { site } from '@/config/site';
 import { useMotionPref } from '@/hooks/useMotionPref';
 import { useOpenStatus, useScrolledPast } from '@/hooks/useMisc';
-import { useEffect, useState as useS } from 'react';
 import { statusLabel } from '@/lib/hours';
 import { track } from '@/lib/analytics';
 import { Icon } from '../ui/Icon';
@@ -14,14 +13,6 @@ import { navLinks, scrollToSection } from './nav';
 
 export function Header() {
   const scrolled = useScrolledPast(24);
-  const [vh, setVh] = useS(800);
-  useEffect(() => {
-    const on = () => setVh(window.innerHeight);
-    on();
-    window.addEventListener('resize', on);
-    return () => window.removeEventListener('resize', on);
-  }, []);
-  const pastIntro = useScrolledPast(vh * 1.9);
   const [open, setOpen] = useState(false);
   const { reduced } = useMotionPref();
   const status = statusLabel(useOpenStatus());
@@ -33,12 +24,10 @@ export function Header() {
     if (pathname !== '/' || !scrollToSection(id, reduced)) navigate(`/#${id}`);
   };
 
-  // Na abertura da home o cabeçalho flutua sobre o filme (tema Noite); depois assenta no tema Dia.
-  const night = pathname === '/' && !pastIntro;
   return (
     <>
       <header
-        className={`${night ? 'night text-ivory' : ''} fixed inset-x-0 top-0 z-40 pt-[env(safe-area-inset-top)] transition-[background-color,border-color] duration-300 ${
+        className={`fixed inset-x-0 top-0 z-40 pt-[env(safe-area-inset-top)] transition-[background-color,border-color] duration-300 ${
           scrolled ? 'border-b hairline bg-ink/95' : 'border-b border-transparent'
         }`}
       >

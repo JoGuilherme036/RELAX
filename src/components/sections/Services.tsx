@@ -27,7 +27,7 @@ export function Services() {
   };
 
   return (
-    <section id="servicos" aria-labelledby="servicos-title" className="relative z-10 scroll-mt-20 rounded-2xl slab py-20 md:rounded-[3rem] md:py-28">
+    <section id="servicos" aria-labelledby="servicos-title" className="relative z-10 scroll-mt-20 border-y hairline bg-ink-2 py-20 md:py-28">
       <div className="container-x">
         <div id="servicos-title">
           <SectionHeading

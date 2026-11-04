@@ -58,7 +58,7 @@ export function Space() {
   const y = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['-6%', '6%']);
 
   return (
-    <section aria-labelledby="espaco-title" className="relative z-10 rounded-2xl slab py-20 md:rounded-[3rem] md:py-28">
+    <section aria-labelledby="espaco-title" className="relative z-10 border-y hairline bg-ink-2 py-20 md:py-28">
       <div className="container-x" id="espaco-title">
         <SectionHeading chapter="VII" label="O espaço" lines={['Um espaço', <em key="e" className="brass-text">para respirar.</em>]} intro="Piso claro, cadeiras pretas, espelhos e café na chegada. Tudo pensado para você desacelerar por uma hora." />
       </div>

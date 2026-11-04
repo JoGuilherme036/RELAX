@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Intro } from '@/components/sections/Intro';
+import { Hero } from '@/components/sections/Hero';
 import { LiveBoard } from '@/components/sections/LiveBoard';
 import { Manifesto } from '@/components/sections/Manifesto';
 import { Services } from '@/components/sections/Services';
@@ -16,8 +16,7 @@ import { Faq } from '@/components/sections/Faq';
 import { FinalCta } from '@/components/sections/FinalCta';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
-// The film plays only in the pinned Intro; everything after it sits on solid ground.
-// The closing scene reuses the film's last frame so the page ends where the video does.
+// Seções em faixas alternadas (ink, ink-3, ink-2) para dar ritmo à leitura.
 export default function Home() {
   useDocumentTitle();
   const { hash } = useLocation();
@@ -31,7 +30,7 @@ export default function Home() {
 
   return (
     <main id="conteudo" className="relative">
-      <Intro />
+      <Hero />
       <LiveBoard />
       <Manifesto />
       <Services />

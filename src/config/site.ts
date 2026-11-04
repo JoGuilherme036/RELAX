@@ -70,4 +70,4 @@ export const site = {
   },
 } as const;
 
-export const fullAddress = `${site.address.street} — ${site.address.district}, ${site.address.city}/${site.address.state}, ${site.address.zip}`;
+export const fullAddress = `${site.address.street} — ${site.address.city}/${site.address.state}`;
