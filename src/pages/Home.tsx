@@ -8,6 +8,7 @@ import { Ritual } from '@/components/sections/Ritual';
 import { Team } from '@/components/sections/Team';
 import { Styles } from '@/components/sections/Styles';
 import { Space } from '@/components/sections/Space';
+import { Gallery } from '@/components/sections/Gallery';
 import { Club } from '@/components/sections/Club';
 import { Reviews } from '@/components/sections/Reviews';
 import { Location } from '@/components/sections/Location';
@@ -39,6 +40,7 @@ export default function Home() {
       <Styles />
       <Space />
       <Club />
+      <Gallery />
       <Location />
       <Reviews />
       <Faq />

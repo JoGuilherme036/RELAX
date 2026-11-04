@@ -144,3 +144,8 @@
     radial-gradient(circle at 50% 0, transparent 5px, #000 5.5px) top / var(--tooth) 51% repeat-x,
     radial-gradient(circle at 50% 100%, transparent 5px, #000 5.5px) bottom / var(--tooth) 51% repeat-x;
 }
+
+/* Logotipo: versão preta no tema Dia, branca no tema Noite. */
+.logo-night { display: none; }
+.night .logo-night { display: block; }
+.night .logo-day { display: none; }

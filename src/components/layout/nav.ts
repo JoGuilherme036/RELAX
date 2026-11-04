@@ -3,7 +3,8 @@ export const navLinks = [
   { id: 'ritual', label: 'O ritual', numeral: 'II' },
   { id: 'equipe', label: 'Barbeiros', numeral: 'III' },
   { id: 'estilos', label: 'Estilos', numeral: 'IV' },
-  { id: 'local', label: 'Localização', numeral: 'V' },
+  { id: 'galeria', label: 'Galeria', numeral: 'V' },
+  { id: 'local', label: 'Localização', numeral: 'VI' },
 ] as const;
 
 /** Scrolls to a home section, respecting reduced motion. */

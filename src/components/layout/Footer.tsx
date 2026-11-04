@@ -3,7 +3,7 @@ import { fullAddress, site } from '@/config/site';
 import { formatRanges } from '@/lib/hours';
 import { weekdayNames } from '@/lib/time';
 import { useMotionPref } from '@/hooks/useMotionPref';
-import { Monogram, Wordmark } from '../ui/Monogram';
+import { Logo } from '../ui/Logo';
 import { Icon } from '../ui/Icon';
 
 export function Footer() {
@@ -14,8 +14,7 @@ export function Footer() {
       <div className="container-x grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <Monogram className="h-12 w-12" />
-            <Wordmark className="text-ivory" />
+            <Logo className="h-12" />
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">{fullAddress}</p>
           <div className="mt-6 flex gap-2">

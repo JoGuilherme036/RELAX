@@ -7,7 +7,7 @@ import { useEffect, useState as useS } from 'react';
 import { statusLabel } from '@/lib/hours';
 import { track } from '@/lib/analytics';
 import { Icon } from '../ui/Icon';
-import { Monogram, Wordmark } from '../ui/Monogram';
+import { Logo } from '../ui/Logo';
 import { LinkButton } from '../ui/Button';
 import { Menu } from './Menu';
 import { navLinks, scrollToSection } from './nav';
@@ -44,8 +44,7 @@ export function Header() {
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 md:h-20">
           <Link to="/" className="flex items-center gap-3" aria-label={`${site.name}, página inicial`}>
-            <Monogram className="h-10 w-10 md:h-11 md:w-11" />
-            <Wordmark className="hidden xs:inline-flex" />
+            <Logo className="h-9 md:h-10" />
           </Link>
 
           <nav aria-label="Principal" className="hidden items-center gap-1 lg:flex">
