@@ -57,7 +57,7 @@ export function Success({ booking }: { booking: Booking }) {
         </p>
       )}
 
-      <div className="mx-auto mt-8 max-w-md rounded-3xl border hairline bg-ink-2/70 p-6 text-left">
+      <div className="mx-auto mt-8 max-w-md rounded-2xl border hairline bg-ink-2/70 p-6 text-left">
         <div className="flex items-center justify-between gap-4">
           <div>
             <p className="eyebrow">Código</p>

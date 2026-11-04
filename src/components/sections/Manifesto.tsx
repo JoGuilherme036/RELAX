@@ -13,9 +13,9 @@ export function Manifesto() {
       <div className="container-x relative">
         <ScrollWords
           className="display max-w-5xl text-[clamp(1.9rem,6.6vw,4.4rem)] leading-[1.08]"
-          text="Não somos uma barbearia de passagem. Somos um ateliê: ferramentas afiadas, luz baixa e o tempo que o seu corte pede."
+          text="Mais que um corte, uma experiência. Precisão na tesoura, hora marcada e o tempo que o seu corte pede."
         />
-        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border hairline bg-brass/10 sm:grid-cols-3">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border hairline bg-brass/10 sm:grid-cols-3">
           {principles.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.08} className="bg-ink/95 p-6 md:p-8">
               <Icon name={p.icon} className="h-6 w-6 text-brass" />

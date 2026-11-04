@@ -13,7 +13,7 @@ export function Reviews() {
         <div className="no-scrollbar mt-10 flex snap-x gap-4 overflow-x-auto">
           {reviews.map((r, i) => (
             <Reveal key={i} className="w-[85%] max-w-md shrink-0 snap-center">
-              <figure className="h-full rounded-3xl border hairline bg-ink-2 p-6">
+              <figure className="h-full rounded-2xl border hairline bg-ink-2 p-6">
                 <p className="text-brass" aria-label={`${r.rating} de 5 estrelas`}>{'★'.repeat(r.rating)}</p>
                 <blockquote className="mt-4 font-display text-xl italic leading-snug">“{r.text}”</blockquote>
                 <figcaption className="mt-4 text-sm text-muted">{r.author} · {r.source}</figcaption>

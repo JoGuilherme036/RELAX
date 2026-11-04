@@ -69,7 +69,7 @@ export default function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <MotionPrefProvider>
-        <div className="grain">
+        <div>
           <Shell />
         </div>
       </MotionPrefProvider>

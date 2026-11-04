@@ -3,29 +3,29 @@ import { fullAddress, site } from '@/config/site';
 import { formatRanges } from '@/lib/hours';
 import { weekdayNames } from '@/lib/time';
 import { useMotionPref } from '@/hooks/useMotionPref';
-import { Monogram } from '../ui/Monogram';
+import { Monogram, Wordmark } from '../ui/Monogram';
 import { Icon } from '../ui/Icon';
 
 export function Footer() {
   const { reduced, setPref } = useMotionPref();
   const order = [1, 2, 3, 4, 5, 6, 0] as const;
   return (
-    <footer className="relative z-10 border-t hairline bg-ink pb-28 pt-16 md:pb-12">
+    <footer className="night relative z-10 bg-ink text-ivory pb-28 pt-16 md:pb-12">
       <div className="container-x grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
             <Monogram className="h-12 w-12" />
-            <p className="font-display text-2xl italic">{site.name}</p>
+            <Wordmark className="text-ivory" />
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">{fullAddress}</p>
           <div className="mt-6 flex gap-2">
-            <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid h-12 w-12 place-items-center rounded-full border hairline hover:border-brass/60">
+            <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid h-12 w-12 place-items-center rounded-md border hairline hover:border-brass">
               <Icon name="instagram" />
             </a>
-            <a href={`mailto:${site.contact.email}`} aria-label="E-mail" className="grid h-12 w-12 place-items-center rounded-full border hairline hover:border-brass/60">
+            <a href={`mailto:${site.contact.email}`} aria-label="E-mail" className="grid h-12 w-12 place-items-center rounded-md border hairline hover:border-brass">
               <Icon name="mail" />
             </a>
-            <a href={`tel:${site.contact.phoneHref}`} aria-label="Telefone" className="grid h-12 w-12 place-items-center rounded-full border hairline hover:border-brass/60">
+            <a href={`tel:${site.contact.phoneHref}`} aria-label="Telefone" className="grid h-12 w-12 place-items-center rounded-md border hairline hover:border-brass">
               <Icon name="phone" />
             </a>
           </div>
@@ -60,7 +60,7 @@ export function Footer() {
       </div>
       <div className="container-x mt-14 flex flex-col gap-2 border-t hairline pt-6 text-[12px] text-muted sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} {site.name}. Todos os direitos reservados.</p>
-        {site.demo && <p className="text-brass/80">Versão de demonstração: dados comerciais fictícios.</p>}
+        {site.demo && <p className="text-brass">Versão de demonstração: dados comerciais fictícios.</p>}
       </div>
     </footer>
   );

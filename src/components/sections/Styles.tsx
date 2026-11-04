@@ -21,7 +21,7 @@ export function Styles() {
       <div className="container-x mt-12 grid auto-rows-[44vw] grid-cols-2 gap-3 sm:auto-rows-[34vw] md:auto-rows-[22vw] md:grid-cols-3 md:gap-5 lg:auto-rows-[18rem]">
         {styles.map((s, i) => (
           <Reveal key={s.id} delay={(i % 3) * 0.06} className={`${layout[i]} h-full`}>
-            <button onClick={() => setIndex(i)} className="group relative block h-full w-full overflow-hidden rounded-2xl border hairline text-left md:rounded-3xl" aria-label={`Ampliar: ${s.title}`}>
+            <button onClick={() => setIndex(i)} className="night group relative block h-full w-full overflow-hidden rounded-2xl border hairline text-left md:rounded-2xl" aria-label={`Ampliar: ${s.title}`}>
               <SmartImage id={s.id} alt={s.title} sizes="(min-width: 768px) 33vw, 50vw" className="h-full !aspect-auto" focal="50% 30%" imgClassName="transition-transform duration-[1.2s] ease-expo group-hover:scale-105" />
               <span className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent" />
               <span className="absolute bottom-3 left-3 right-3 md:bottom-5 md:left-5">
@@ -104,7 +104,7 @@ function Lightbox({ index, onChange }: { index: number | null; onChange: (i: num
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full max-w-md cursor-grab touch-none active:cursor-grabbing"
               >
-                <SmartImage id={item.id} alt={item.title} sizes="(min-width: 768px) 28rem, 92vw" className="rounded-3xl" imgClassName="pointer-events-none" />
+                <SmartImage id={item.id} alt={item.title} sizes="(min-width: 768px) 28rem, 92vw" className="rounded-2xl" imgClassName="pointer-events-none" />
               </motion.div>
             </AnimatePresence>
             <button onClick={() => go(-1)} className="absolute left-4 hidden h-12 w-12 place-items-center rounded-full border hairline bg-ink/60 md:grid" aria-label="Anterior">
@@ -123,7 +123,7 @@ function Lightbox({ index, onChange }: { index: number | null; onChange: (i: num
               <button onClick={() => go(-1)} className="grid h-12 w-12 place-items-center rounded-full border hairline md:hidden" aria-label="Anterior">
                 <Icon name="arrowLeft" />
               </button>
-              <a href={whatsappLink(`Olá! Quero um corte no estilo *${item.title}*. Tem horário?`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-brass px-5 text-[14px] font-semibold text-ink">
+              <a href={whatsappLink(`Olá! Quero um corte no estilo *${item.title}*. Tem horário?`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-md bg-brass px-5 text-[14px] font-semibold text-ink">
                 <Icon name="whatsapp" className="h-[18px] w-[18px]" /> Quero esse
               </a>
               <button onClick={() => go(1)} className="grid h-12 w-12 place-items-center rounded-full border hairline md:hidden" aria-label="Próxima">

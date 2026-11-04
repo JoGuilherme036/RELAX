@@ -52,7 +52,7 @@ export function ActionBar() {
             <Link
               to={order.services.length ? '/agendar?de=comanda' : '/agendar'}
               onClick={() => track('cta_book_click', { from: 'action_bar' })}
-              className="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-full bg-brass px-4 text-[14px] font-semibold text-ink active:scale-[0.97]"
+              className="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-md bg-brass px-4 text-[14px] font-semibold text-ink active:scale-[0.97]"
             >
               <Icon name="calendar" className="h-[18px] w-[18px] shrink-0" />
               <span>Agendar</span>

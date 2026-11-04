@@ -38,7 +38,7 @@ export function Location() {
 
       <div className="container-x mt-12 grid gap-4 lg:grid-cols-[1.1fr_1fr] lg:gap-6">
         <Reveal className="flex flex-col gap-4">
-          <div className="rounded-3xl border hairline bg-ink p-6 md:p-8">
+          <div className="rounded-2xl border hairline bg-ink p-6 md:p-8">
             <p className="flex items-center gap-3" aria-live="polite">
               <span className="relative flex h-3 w-3">
                 {status.open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />}
@@ -68,7 +68,7 @@ export function Location() {
             </div>
           </div>
 
-          <div className="rounded-3xl border hairline bg-ink p-6 md:p-8">
+          <div className="rounded-2xl border hairline bg-ink p-6 md:p-8">
             <p className="eyebrow">Horários</p>
             <dl className="mt-4 divide-y divide-brass/10">
               {order.map((d) => (
@@ -85,7 +85,7 @@ export function Location() {
         </Reveal>
 
         <Reveal delay={0.08} className="flex flex-col gap-4">
-          <div className="relative min-h-[22rem] flex-1 overflow-hidden rounded-3xl border hairline">
+          <div className="night relative min-h-[22rem] flex-1 overflow-hidden rounded-2xl border hairline">
             {showMap ? (
               <iframe title={`Mapa: ${site.name}`} src={mapLinks.embed} className="absolute inset-0 h-full w-full grayscale-[0.6] invert-[0.9] hue-rotate-180" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             ) : (
@@ -94,7 +94,7 @@ export function Location() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-6">
                   <p className="text-sm text-muted">O mapa é carregado do Google somente se você tocar abaixo.</p>
-                  <button onClick={() => setShowMap(true)} className="inline-flex min-h-12 items-center gap-2 rounded-full border border-brass/60 bg-ink px-5 text-[14px] font-semibold text-brass-light">
+                  <button onClick={() => setShowMap(true)} className="inline-flex min-h-12 items-center gap-2 rounded-md border border-brass/60 bg-ink px-5 text-[14px] font-semibold text-brass-light">
                     <Icon name="route" className="h-[18px] w-[18px]" /> Mostrar mapa
                   </button>
                 </div>

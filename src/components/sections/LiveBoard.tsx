@@ -86,7 +86,7 @@ export function LiveBoard() {
                   role="radio"
                   aria-checked={on}
                   onClick={() => setServiceId(id)}
-                  className={`min-h-11 shrink-0 rounded-full border px-4 text-[13px] font-semibold transition-colors ${on ? 'border-brass bg-brass text-ink' : 'hairline text-ivory/80 hover:border-brass/50'}`}
+                  className={`min-h-11 shrink-0 rounded-md border px-4 text-[13px] font-semibold transition-colors ${on ? 'border-brass bg-brass text-ink' : 'hairline text-ivory/80 hover:border-brass/50'}`}
                 >
                   {s.name}
                 </button>
@@ -95,7 +95,7 @@ export function LiveBoard() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-[1.75rem] border hairline bg-ink-2/80 p-3 sm:p-4" aria-live="polite" aria-busy={!board}>
+        <div className="mt-8 rounded-2xl border hairline bg-ink-2/80 p-3 sm:p-4" aria-live="polite" aria-busy={!board}>
           {board === 'error' ? (
             <div className="flex flex-col items-start gap-3 p-4">
               <p>Não conseguimos carregar a agenda agora.</p>

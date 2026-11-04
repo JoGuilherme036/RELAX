@@ -6,40 +6,40 @@ export type TimeRange = { start: string; end: string }; // "HH:mm", local time o
 
 export const site = {
   demo: true, // DEMO: set to false once all real data below is filled in
-  name: 'RB Barbearia', // DEMO
-  shortName: 'RB',
-  concept: 'Ateliê noturno de barbearia',
-  url: 'https://rb-barbearia.example', // DEMO: production domain, no trailing slash
+  name: 'Relax Barbearia',
+  shortName: 'Relax',
+  concept: 'Barbearia com calma e precisão',
+  url: 'https://relax-barbearia.example', // DEMO: production domain, no trailing slash
 
   seo: {
-    title: 'RB Barbearia — Ateliê noturno de corte e barba',
+    title: 'Relax Barbearia — Corte com calma em Teresina',
     description:
-      'Corte, barba e ritual de toalha quente sob luz âmbar. Agende online em menos de um minuto, sem cadastro.',
+      'Mais que um corte, uma experiência. Corte, barba e atendimento infantil com hora marcada, café na chegada e Sala VIP. Desde 2019 em Teresina.',
   },
 
   contact: {
     whatsapp: '5511999999999', // DEMO: country + area code + number, digits only
     phone: '+55 11 99999-9999', // DEMO: display format
     phoneHref: '+5511999999999', // DEMO
-    email: 'contato@rb-barbearia.example', // DEMO
-    instagram: 'https://instagram.com/rb.barbearia', // DEMO
-    instagramHandle: '@rb.barbearia', // DEMO
+    email: 'contato@relax-barbearia.example', // DEMO
+    instagram: 'https://instagram.com/relaxbarbearia', // DEMO
+    instagramHandle: '@relaxbarbearia', // DEMO
   },
 
   address: {
-    street: 'Rua Exemplo, 123', // DEMO
-    district: 'Centro', // DEMO
-    city: 'São Paulo', // DEMO
-    state: 'SP', // DEMO
+    street: 'Av. Raul Lopes, Poty Premier 880',
+    district: 'Teresina', // DEMO: confirmar o bairro
+    city: 'Teresina',
+    state: 'PI',
     zip: '01000-000', // DEMO
     lat: -23.55052, // DEMO
     lng: -46.633308, // DEMO
-    reference: 'Em frente à praça, entrada pela porta de vidro com o monograma RB.', // DEMO
+    reference: 'Poty Premier, Av. Raul Lopes. Procure a fachada com o logotipo Relax.', // DEMO
     parking: 'Estacionamento conveniado a 50 m.', // DEMO
   },
 
   // Brazil has no DST since 2019; adjust if the shop is in a different offset.
-  timeZone: 'America/Sao_Paulo',
+  timeZone: 'America/Fortaleza',
   utcOffset: '-03:00',
 
   hours: {

@@ -53,7 +53,7 @@ function ProCard({ pro, next, index }: { pro: Professional; next?: string; index
         onPointerMove={onMove}
         onPointerLeave={() => setTilt({ x: 0, y: 0 })}
         style={{ transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
-        className="group relative overflow-hidden rounded-[1.75rem] border hairline bg-ink-2 transition-transform duration-300 ease-out"
+        className="group relative overflow-hidden rounded-2xl border hairline bg-ink-2 transition-transform duration-300 ease-out"
       >
         {pro.photo ? (
           <SmartImage id={pro.photo} alt={`Retrato de ${pro.name}`} sizes="(min-width: 768px) 30vw, 78vw" ratio="4 / 5" />
@@ -83,7 +83,7 @@ function ProCard({ pro, next, index }: { pro: Professional; next?: string; index
           <Link
             to={`/agendar?barbeiro=${pro.id}`}
             onClick={() => track('cta_book_click', { from: 'team', pro: pro.id })}
-            className="mt-5 flex min-h-12 items-center justify-between rounded-full border border-brass/50 px-5 text-[14px] font-semibold text-brass-light transition-colors hover:bg-brass hover:text-ink"
+            className="mt-5 flex min-h-12 items-center justify-between rounded-md border border-brass/50 px-5 text-[14px] font-semibold text-brass-light transition-colors hover:bg-brass hover:text-ink"
           >
             Agendar com {pro.name} <Icon name="arrowRight" className="h-4 w-4" />
           </Link>

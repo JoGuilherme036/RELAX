@@ -76,7 +76,7 @@ export function Intro() {
   const skip = () => document.getElementById('agenda')?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
 
   return (
-    <section ref={ref} aria-labelledby="hero-title" className={reduced ? 'relative' : 'relative h-[250svh] md:h-[270vh]'}>
+    <section ref={ref} aria-labelledby="hero-title" className={`night bg-ink text-ivory ${reduced ? 'relative' : 'relative h-[250svh] md:h-[270vh]'}`}>
       <div className={`${reduced ? 'relative' : 'sticky top-0'} h-[100svh] min-h-[620px] overflow-hidden`}>
         <ScrollFilm progress={film} />
 
@@ -93,25 +93,25 @@ export function Intro() {
           className="container-x relative flex h-full flex-col justify-end pb-8 pt-24 short:pb-6 md:justify-center md:pb-16"
           style={reduced ? undefined : { opacity: heroOpacity, y: heroY, pointerEvents: heroEvents }}
         >
-          <motion.p {...fade(0.1)} className="mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border hairline bg-ink/70 px-3.5 py-2 text-[12px] short:mb-4">
+          <motion.p {...fade(0.1)} className="mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border hairline bg-ink/80 px-3.5 py-2 text-[12px] short:mb-4">
             <span className="relative flex h-2 w-2">
-              {status.open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />}
-              <span className={`relative inline-flex h-2 w-2 rounded-full ${status.open ? 'bg-emerald-400' : 'bg-muted'}`} />
+              {status.open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brass opacity-60" />}
+              <span className={`relative inline-flex h-2 w-2 rounded-full ${status.open ? 'bg-brass' : 'bg-muted'}`} />
             </span>
             <span className="font-semibold">{label.short}</span>
             <span className="text-ivory/70">· {label.detail}</span>
           </motion.p>
 
-          <h1 id="hero-title" className="display text-[clamp(3.3rem,15.5vw,9.5rem)] [text-shadow:0_4px_40px_rgb(0_0_0/0.55)] short:text-[clamp(2.8rem,13vw,5.5rem)] tiny:text-[clamp(2.4rem,11.5vw,4rem)]">
-            <span className="block overflow-hidden pb-[0.06em]"><motion.span className="block" {...line(0.15)}>Precisão</motion.span></span>
-            <span className="block overflow-hidden pb-[0.06em]"><motion.span className="block" {...line(0.25)}>sob luz</motion.span></span>
+          <h1 id="hero-title" className="display text-[clamp(3.6rem,15vw,8.5rem)] [text-shadow:0_2px_30px_rgb(0_0_0/0.45)] short:text-[clamp(2.8rem,13vw,5.5rem)] tiny:text-[clamp(2.4rem,11.5vw,4rem)]">
+            <span className="block overflow-hidden pb-[0.06em]"><motion.span className="block" {...line(0.15)}>Corte</motion.span></span>
+            <span className="block overflow-hidden pb-[0.06em]"><motion.span className="block" {...line(0.25)}>com</motion.span></span>
             <span className="block overflow-hidden pb-[0.1em]">
-              <motion.span className="brass-text block italic" {...line(0.35)}>âmbar.</motion.span>
+              <motion.span className="brass-text block italic" {...line(0.35)}>calma.</motion.span>
             </span>
           </h1>
 
           <motion.p {...fade(0.55)} className="mt-5 max-w-md text-[15.5px] leading-relaxed text-ivory short:mt-3 short:text-[14.5px] sm:text-base tiny:hidden">
-            Corte, barba e ritual de toalha quente num ateliê feito para a noite da cidade. Hora marcada, sem fila, sem pressa.
+            Precisão sem pressa: corte, barba e café na chegada, com hora marcada. Do primeiro corte da criança à Sala VIP.
           </motion.p>
 
           <motion.div {...fade(0.65)} className="mt-7 flex gap-2.5 short:mt-5 sm:gap-3">
@@ -148,13 +148,13 @@ export function Intro() {
 
         {!reduced && (
           <>
-            <Caption progress={p} range={[0.17, 0.23, 0.33, 0.39]} chapter="II" label="A cadeira" text="Toda noite começa com uma cadeira vazia." />
+            <Caption progress={p} range={[0.17, 0.23, 0.33, 0.39]} chapter="II" label="A cadeira" text="Toda calma começa numa cadeira confortável." />
             <Caption progress={p} range={[0.43, 0.49, 0.57, 0.63]} chapter="III" label="A bancada" text="Ferramentas afiadas, tempo de sobra." />
             <ChapterRail progress={film} />
             <motion.button
               onClick={skip}
               style={{ opacity: skipOpacity }}
-              className="absolute right-4 top-[calc(env(safe-area-inset-top)+5rem)] inline-flex min-h-11 items-center gap-2 rounded-full border hairline bg-ink/60 px-4 text-[12px] font-semibold text-ivory/85 hover:text-ivory md:bottom-10 md:right-12 md:top-auto"
+              className="absolute right-4 top-[calc(env(safe-area-inset-top)+5rem)] inline-flex min-h-11 items-center gap-2 rounded-md border hairline bg-ink/70 px-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-ivory/85 hover:text-ivory md:bottom-10 md:right-12 md:top-auto"
             >
               Pular introdução <Icon name="arrowDown" className="h-4 w-4" />
             </motion.button>
@@ -165,15 +165,14 @@ export function Intro() {
   );
 }
 
-function Caption({ progress, range, chapter, label, text }: { progress: MotionValue<number>; range: number[]; chapter: string; label: string; text: string }) {
+function Caption({ progress, range, label, text }: { progress: MotionValue<number>; range: number[]; chapter?: string; label: string; text: string }) {
   const opacity = useTransform(progress, range, [0, 1, 1, 0]);
   const y = useTransform(progress, [range[0], range[1]], [28, 0]);
   return (
     <motion.div style={{ opacity, y }} className="pointer-events-none absolute inset-x-0 bottom-32 md:bottom-24">
       <div className="container-x">
         <p className="eyebrow flex items-center gap-3">
-          <span className="font-display text-[13px] normal-case italic tracking-normal text-brass-light">{chapter}</span>
-          <span className="h-px w-10 bg-brass/50" />
+          <span aria-hidden="true" className="leaf text-moss" />
           {label}
         </p>
         <p className="display mt-4 max-w-3xl text-[clamp(2.2rem,8.5vw,5.4rem)] italic [text-shadow:0_4px_40px_rgb(0_0_0/0.8)]">{text}</p>
@@ -200,10 +199,10 @@ function ChapterMark({ progress, chapter }: { progress: MotionValue<number>; cha
   return (
     <motion.div style={{ opacity, top: `${chapter.at * 100}%` }} className="absolute right-0 flex -translate-y-1/2 translate-x-[3px] items-center gap-3 whitespace-nowrap">
       <span className="text-right text-[11px] uppercase tracking-[0.25em] text-ivory/80">
-        <span className="mr-2 font-display text-[13px] normal-case italic tracking-normal text-brass-light">{chapter.n}</span>
+        
         {chapter.label}
       </span>
-      <span className="h-[7px] w-[7px] rounded-full bg-brass shadow-[0_0_12px_rgb(var(--brass))]" />
+      <span className="h-[7px] w-[7px] rounded-full bg-brass" />
     </motion.div>
   );
 }

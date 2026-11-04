@@ -37,7 +37,7 @@ npm test           # testes unitários (disponibilidade, horários, adaptador de
 
 O banco D1 `rb-barbearia` já foi criado na conta Cloudflare e as tabelas já existem (`wrangler.toml` aponta para ele).
 
-1. No painel da Cloudflare: **Workers & Pages → Criar → Importar um repositório** e escolha `BARBER-SITE`.
+1. No painel da Cloudflare: **Workers & Pages → Criar → Importar um repositório** e escolha `RELAX`.
 2. Nome do projeto: **`rb-barbearia`** (precisa ser igual ao `name` do `wrangler.toml`). Comando de build: `npm run build`. Comando de deploy: `npx wrangler deploy` (padrão).
 3. Depois do primeiro deploy: **Configurações → Variáveis e segredos → Adicionar** um segredo `ADMIN_TOKEN` com a senha do painel, e faça um novo deploy.
 4. Pronto: o site fica em `https://rb-barbearia.<sua-conta>.workers.dev` e o painel em `/admin`. Cada `git push` na `main` publica sozinho. Para usar um domínio próprio: **Configurações → Domínios e rotas**.

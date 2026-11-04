@@ -8,7 +8,7 @@ import { SmartImage } from '../ui/SmartImage';
 
 function StepCard({ step, className = '' }: { step: (typeof ritualSteps)[number]; className?: string }) {
   return (
-    <article className={`group relative overflow-hidden rounded-[1.75rem] border hairline bg-ink-2 ${className}`}>
+    <article className={`night group relative overflow-hidden rounded-2xl border hairline bg-ink-2 ${className}`}>
       <SmartImage id={step.image} alt={step.title} sizes="(min-width: 768px) 40vw, 85vw" ratio="4 / 5" focal="50% 40%" imgClassName="transition-transform duration-[1.2s] ease-expo group-hover:scale-105" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">

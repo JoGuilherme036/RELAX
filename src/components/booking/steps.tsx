@@ -239,7 +239,7 @@ export function TimeStep({ draft, update, refreshKey, onSlotLost }: StepProps & 
             <p className="font-display text-xl">Sem horários livres neste dia.</p>
             <p className="mt-1 text-sm text-muted">Procure o próximo dia com vaga ou peça um encaixe (o encaixe não é uma reserva confirmada).</p>
             <div className="mt-4 flex flex-wrap gap-2">
-              <button onClick={findNext} disabled={searching} className="min-h-11 rounded-full bg-brass px-5 text-[14px] font-semibold text-ink disabled:opacity-60">
+              <button onClick={findNext} disabled={searching} className="min-h-11 rounded-md bg-brass px-5 text-[14px] font-semibold text-ink disabled:opacity-60">
                 {searching ? 'Procurando…' : 'Próximo dia com vaga'}
               </button>
               <a href={whatsappLink(`Olá! Procuro um encaixe em ${formatDayLong(day!)}. É possível?`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border hairline px-5 text-[14px]">
@@ -377,7 +377,7 @@ export function ReviewStep({ draft, accepted, setAccepted, acceptError }: StepPr
   return (
     <div>
       <StepTitle id="step-title" title="Tudo certo?" hint="Confira antes de confirmar. Você pode voltar e mudar qualquer coisa." />
-      <div className="rounded-3xl border hairline bg-ink-2/70 p-5">
+      <div className="rounded-2xl border hairline bg-ink-2/70 p-5">
         <p className="font-display text-3xl italic">{draft.day && formatDayLong(draft.day)}</p>
         <p className="mt-1 font-display text-5xl text-brass-light tabular-nums">{draft.time}</p>
         <dl className="mt-4 divide-y divide-brass/10 text-[15px]">

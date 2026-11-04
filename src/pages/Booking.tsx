@@ -232,7 +232,7 @@ export default function Booking() {
             <button
               onClick={next}
               disabled={!canContinue || submitting}
-              className="inline-flex min-h-14 items-center gap-2 rounded-full bg-brass px-6 text-[15px] font-semibold text-ink shadow-[0_10px_30px_-12px_rgb(var(--brass)/0.7)] transition-[transform,opacity] active:scale-[0.97] disabled:opacity-40"
+              className="inline-flex min-h-14 items-center gap-2 rounded-md bg-brass px-6 text-[15px] font-semibold text-ink shadow-[0_10px_30px_-12px_rgb(var(--brass)/0.7)] transition-[transform,opacity] active:scale-[0.97] disabled:opacity-40"
             >
               {submitting ? (
                 <>

@@ -64,7 +64,7 @@ export default function ManageBooking() {
         Consultar, remarcar <em className="brass-text">ou cancelar.</em>
       </h1>
 
-      <form onSubmit={find} className="mt-10 space-y-4 rounded-3xl border hairline bg-ink-2/50 p-5 md:p-7">
+      <form onSubmit={find} className="mt-10 space-y-4 rounded-2xl border hairline bg-ink-2/50 p-5 md:p-7">
         <label className="block">
           <span className="text-sm font-medium">Código do agendamento</span>
           <input value={code} onChange={(e) => setCode(e.target.value.toUpperCase())} placeholder="RB-XXXXX" autoCapitalize="characters" autoComplete="off" required className={`${input} font-mono tracking-widest`} />
@@ -73,7 +73,7 @@ export default function ManageBooking() {
           <span className="text-sm font-medium">WhatsApp usado na reserva</span>
           <input value={phone} onChange={(e) => setPhone(maskBrPhone(e.target.value))} type="tel" inputMode="tel" autoComplete="tel-national" placeholder="(11) 91234-5678" required className={input} />
         </label>
-        <button type="submit" disabled={state === 'loading'} className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brass text-[15px] font-semibold text-ink disabled:opacity-50">
+        <button type="submit" disabled={state === 'loading'} className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-brass text-[15px] font-semibold text-ink disabled:opacity-50">
           {state === 'loading' ? 'Buscando…' : 'Buscar agendamento'}
         </button>
         <div aria-live="polite">
@@ -83,7 +83,7 @@ export default function ManageBooking() {
       </form>
 
       {booking && (
-        <section aria-label="Detalhes" className="mt-6 rounded-3xl border hairline bg-ink-2/70 p-6">
+        <section aria-label="Detalhes" className="mt-6 rounded-2xl border hairline bg-ink-2/70 p-6">
           <div className="flex items-center justify-between">
             <p className="font-mono tracking-widest">{booking.code}</p>
             <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${booking.status === 'confirmed' ? 'bg-emerald-400/15 text-emerald-300' : 'bg-danger/15 text-danger'}`}>
@@ -102,17 +102,17 @@ export default function ManageBooking() {
 
           {booking.status === 'confirmed' && (
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
-              <a href={whatsappLink(`Olá! Quero remarcar meu agendamento ${booking.code} (${formatDayLong(booking.day)} às ${booking.time}).`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-brass/60 text-[14px] font-semibold text-brass-light">
+              <a href={whatsappLink(`Olá! Quero remarcar meu agendamento ${booking.code} (${formatDayLong(booking.day)} às ${booking.time}).`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brass/60 text-[14px] font-semibold text-brass-light">
                 <Icon name="whatsapp" className="h-[18px] w-[18px]" /> Remarcar pelo WhatsApp
               </a>
               {canCancel ? (
                 confirming ? (
                   <div className="flex gap-2">
-                    <button onClick={cancel} className="min-h-12 flex-1 rounded-full bg-danger text-[14px] font-semibold text-ink">Confirmar cancelamento</button>
-                    <button onClick={() => setConfirming(false)} className="min-h-12 rounded-full border hairline px-4 text-[14px]">Manter</button>
+                    <button onClick={cancel} className="min-h-12 flex-1 rounded-md bg-danger text-[14px] font-semibold text-ink">Confirmar cancelamento</button>
+                    <button onClick={() => setConfirming(false)} className="min-h-12 rounded-md border hairline px-4 text-[14px]">Manter</button>
                   </div>
                 ) : (
-                  <button onClick={() => setConfirming(true)} className="min-h-12 rounded-full border hairline text-[14px] hover:border-danger/60">Cancelar agendamento</button>
+                  <button onClick={() => setConfirming(true)} className="min-h-12 rounded-md border hairline text-[14px] hover:border-danger/60">Cancelar agendamento</button>
                 )
               ) : (
                 <p className="self-center text-[13px] text-muted">Cancelamento online até {site.booking.cancelUntilHours}h antes.</p>
@@ -120,7 +120,7 @@ export default function ManageBooking() {
             </div>
           )}
           {booking.status === 'cancelled' && (
-            <Link to="/agendar" className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-brass px-6 text-[14px] font-semibold text-ink">
+            <Link to="/agendar" className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-md bg-brass px-6 text-[14px] font-semibold text-ink">
               Agendar novo horário <Icon name="arrowRight" className="h-4 w-4" />
             </Link>
           )}

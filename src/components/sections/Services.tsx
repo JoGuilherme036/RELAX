@@ -27,7 +27,7 @@ export function Services() {
   };
 
   return (
-    <section id="servicos" aria-labelledby="servicos-title" className="relative z-10 scroll-mt-20 rounded-[2rem] slab py-20 md:rounded-[3rem] md:py-28">
+    <section id="servicos" aria-labelledby="servicos-title" className="relative z-10 scroll-mt-20 rounded-2xl slab py-20 md:rounded-[3rem] md:py-28">
       <div className="container-x">
         <div id="servicos-title">
           <SectionHeading
@@ -44,7 +44,7 @@ export function Services() {
               key={c.id}
               onClick={() => setFilter(c.id)}
               aria-pressed={filter === c.id}
-              className={`min-h-11 shrink-0 rounded-full border px-5 text-[13px] font-semibold transition-colors ${filter === c.id ? 'border-brass bg-brass text-ink' : 'hairline text-ivory/80 hover:border-brass/50'}`}
+              className={`min-h-11 shrink-0 rounded-md border px-5 text-[13px] font-semibold transition-colors ${filter === c.id ? 'border-brass bg-brass text-ink' : 'hairline text-ivory/80 hover:border-brass/50'}`}
             >
               {c.label}
             </button>
@@ -104,7 +104,7 @@ export function Services() {
 
           <aside aria-label="Sua comanda" className="relative">
             <div className="flex flex-col gap-6 lg:sticky lg:top-28">
-              <div className="relative hidden overflow-hidden rounded-[1.75rem] border hairline lg:block">
+              <div className="night relative hidden overflow-hidden rounded-2xl border hairline lg:block">
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.div key={previewImage} initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8, ease }}>
                     <SmartImage id={previewImage} alt={previewService?.name ?? ''} sizes="36vw" ratio="16 / 11" focal="50% 30%" />

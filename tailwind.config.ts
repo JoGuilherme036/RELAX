@@ -10,11 +10,13 @@ export default {
         muted: 'rgb(var(--muted) / <alpha-value>)',
         brass: { DEFAULT: 'rgb(var(--brass) / <alpha-value>)', light: 'rgb(var(--brass-light) / <alpha-value>)', deep: 'rgb(var(--brass-deep) / <alpha-value>)' },
         moss: 'rgb(var(--moss) / <alpha-value>)',
+        cafe: 'rgb(var(--cafe) / <alpha-value>)',
+        line: { DEFAULT: 'rgb(var(--line) / <alpha-value>)', strong: 'rgb(var(--line-strong) / <alpha-value>)' },
         danger: 'rgb(var(--danger) / <alpha-value>)',
       },
       fontFamily: {
-        display: ['"Bodoni Moda Variable"', 'Didot', 'Georgia', 'serif'],
-        sans: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
+        display: ['"Cormorant Garamond Variable"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"Hanken Grotesk Variable"', '"Hanken Grotesk"', 'system-ui', 'sans-serif'],
       },
       transitionTimingFunction: {
         expo: 'cubic-bezier(0.16, 1, 0.3, 1)',

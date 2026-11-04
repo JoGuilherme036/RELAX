@@ -3,12 +3,12 @@ import { ContactShadows, Environment, Float, Lightformer } from '@react-three/dr
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-// Brass club medallion. Geometry is procedural; the engraving is drawn on 2D canvases
+// Relax club medallion (sage green). Geometry is procedural; the engraving is drawn on 2D canvases
 // (color, bump and roughness maps) with the brand typeface, so no model download is needed.
 
 const SIZE = 1024;
-const FONT = '"Bodoni Moda Variable", Didot, serif';
-const SANS = '"Manrope Variable", sans-serif';
+const FONT = '"Cormorant Garamond Variable", Georgia, serif';
+const SANS = '"Hanken Grotesk Variable", sans-serif';
 
 type Layer = 'color' | 'bump' | 'rough';
 
@@ -18,7 +18,7 @@ function drawFace(layer: Layer, side: 'front' | 'back') {
   const g = c.getContext('2d')!;
   const mid = SIZE / 2;
   const palette = {
-    color: { base: '#c99a5e', raised: '#e9c48a', groove: '#7a5228' },
+    color: { base: '#5e7765', raised: '#cfe0d2', groove: '#2e4a3a' },
     bump: { base: '#808080', raised: '#ffffff', groove: '#303030' },
     rough: { base: '#7a7a7a', raised: '#262626', groove: '#a0a0a0' },
   }[layer];
@@ -49,7 +49,7 @@ function drawFace(layer: Layer, side: 'front' | 'back') {
   ring(mid - 150, 2, palette.groove);
 
   // Circular lettering between the two grooves.
-  const label = side === 'front' ? 'BARBEARIA  ·  ATELIÊ NOTURNO  ·  CLUBE  ·  ' : 'MEMBRO  ·  HORA MARCADA  ·  NAVALHA  ·  ';
+  const label = side === 'front' ? 'BARBEARIA  ·  DESDE 2019  ·  TERESINA  ·  ' : 'MEMBRO  ·  HORA MARCADA  ·  CALMA  ·  ';
   g.fillStyle = palette.raised;
   g.font = `600 34px ${SANS}`;
   g.textAlign = 'center';
@@ -67,13 +67,13 @@ function drawFace(layer: Layer, side: 'front' | 'back') {
 
   g.fillStyle = palette.raised;
   if (side === 'front') {
-    g.font = `italic 400 330px ${FONT}`;
-    g.fillText('RB', mid - 6, mid + 20);
+    g.font = `italic 500 230px ${FONT}`;
+    g.fillText('Relax', mid, mid + 20);
   } else {
     g.font = `italic 400 120px ${FONT}`;
     g.fillText('Clube', mid, mid - 20);
     g.font = `600 30px ${SANS}`;
-    g.fillText('M M X X V I', mid, mid + 70);
+    g.fillText('D E S D E  2 0 1 9', mid, mid + 70);
   }
   return c;
 }
@@ -83,10 +83,10 @@ function drawEdge(layer: 'bump' | 'color') {
   c.width = 1024;
   c.height = 32;
   const g = c.getContext('2d')!;
-  g.fillStyle = layer === 'bump' ? '#808080' : '#c99a5e';
+  g.fillStyle = layer === 'bump' ? '#808080' : '#5e7765';
   g.fillRect(0, 0, c.width, c.height);
   for (let x = 0; x < c.width; x += 8) {
-    g.fillStyle = layer === 'bump' ? '#ffffff' : '#e3bb80';
+    g.fillStyle = layer === 'bump' ? '#ffffff' : '#a9c4af';
     g.fillRect(x, 0, 4, c.height);
   }
   return c;
@@ -182,16 +182,16 @@ export default function Medallion({ reduced, active = true }: { reduced: boolean
       aria-hidden="true"
     >
       <ambientLight intensity={0.15} />
-      <directionalLight position={[3, 4, 5]} intensity={1.4} color="#ffd9a8" />
+      <directionalLight position={[3, 4, 5]} intensity={1.4} color="#f4efe2" />
       <Float speed={reduced ? 0 : 1.6} rotationIntensity={reduced ? 0 : 0.25} floatIntensity={reduced ? 0 : 0.6}>
         <Coin reduced={reduced} />
       </Float>
-      <ContactShadows position={[0, -2.1, 0]} opacity={0.55} scale={7} blur={2.6} far={3} color="#000000" />
+      <ContactShadows position={[0, -2.1, 0]} opacity={0.55} scale={7} blur={2.6} far={3} color="#12130f" />
       <Environment resolution={256} frames={1}>
-        <Lightformer form="rect" intensity={3} color="#ffbe78" position={[-4, 2, 3]} scale={[4, 2, 1]} />
-        <Lightformer form="rect" intensity={2.2} color="#fff1dc" position={[4, -1, 2]} scale={[3, 4, 1]} />
-        <Lightformer form="ring" intensity={1.6} color="#ff9b4a" position={[0, 4, -3]} scale={3} />
-        <Lightformer form="rect" intensity={0.6} color="#5f7d72" position={[0, -4, 1]} scale={[8, 1, 1]} />
+        <Lightformer form="rect" intensity={3} color="#f4efe2" position={[-4, 2, 3]} scale={[4, 2, 1]} />
+        <Lightformer form="rect" intensity={2.2} color="#ffffff" position={[4, -1, 2]} scale={[3, 4, 1]} />
+        <Lightformer form="ring" intensity={1.6} color="#cfe0d2" position={[0, 4, -3]} scale={3} />
+        <Lightformer form="rect" intensity={0.6} color="#2e4a3a" position={[0, -4, 1]} scale={[8, 1, 1]} />
       </Environment>
     </Canvas>
   );

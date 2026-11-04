@@ -6,13 +6,13 @@ type Variant = 'primary' | 'ghost' | 'quiet';
 type Common = { variant?: Variant; icon?: IconName; iconRight?: IconName; className?: string; children: ReactNode; size?: 'md' | 'lg' };
 
 const base =
-  'group relative inline-flex select-none whitespace-nowrap items-center justify-center gap-2.5 rounded-full font-semibold tracking-wide transition-[transform,background-color,color,border-color,box-shadow] duration-200 ease-expo active:scale-[0.97] disabled:pointer-events-none disabled:opacity-40';
-const sizes = { md: 'min-h-12 px-5 text-[14px]', lg: 'min-h-14 px-7 text-[15px]' };
+  'group relative inline-flex select-none whitespace-nowrap items-center justify-center gap-2.5 rounded-md border border-transparent font-semibold uppercase tracking-[0.16em] transition-[transform,background-color,color,border-color] duration-200 ease-out active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40';
+const sizes = { md: 'min-h-12 px-5 text-[12.5px]', lg: 'min-h-14 px-7 text-[13px]' };
 const variants: Record<Variant, string> = {
   primary:
-    'bg-brass text-ink shadow-[0_10px_30px_-12px_rgb(var(--brass)/0.7),inset_0_1px_0_rgb(255_255_255/0.35)] hover:bg-brass-light',
-  ghost: 'border hairline bg-ink/40 text-ivory hover:border-brass/60 hover:bg-ink/70',
-  quiet: 'text-ivory/80 hover:text-ivory',
+    'bg-brass text-ink hover:bg-brass-light',
+  ghost: '!border-line-strong bg-transparent text-ivory hover:bg-ivory/5',
+  quiet: 'text-brass hover:bg-brass/10',
 };
 
 export const cls = ({ variant = 'primary', size = 'md', className = '' }: Pick<Common, 'variant' | 'size' | 'className'>) =>

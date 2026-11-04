@@ -44,13 +44,13 @@ export function Club() {
         </div>
 
         <div id="clube-title">
-          <SectionHeading chapter="VIII" label="Clube RB" lines={['Sua cadeira,', <em key="e" className="brass-text">todo mês.</em>]} intro="Assinatura para quem não abre mão do corte em dia. Prioridade na agenda e benefícios da casa." />
+          <SectionHeading chapter="VIII" label="Clube Relax" lines={['Sua cadeira,', <em key="e" className="brass-text">todo mês.</em>]} intro="Assinatura para quem não abre mão do corte em dia. Prioridade na agenda e benefícios da casa." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {clubPlans.map((p, i) => (
               <Reveal key={p.id} delay={i * 0.08}>
-                <article className={`relative flex h-full flex-col rounded-3xl border p-6 ${'highlight' in p && p.highlight ? 'border-brass/60 bg-gradient-to-b from-brass/15 to-transparent' : 'hairline bg-ink/60'}`}>
-                  {'highlight' in p && p.highlight && <span className="absolute -top-3 left-6 rounded-full bg-brass px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-ink">Mais escolhido</span>}
-                  <h3 className="font-display text-3xl italic">{p.name}</h3>
+                <article className={`relative flex h-full flex-col rounded-2xl border p-6 ${'highlight' in p && p.highlight ? 'border-brass bg-brass/10' : 'hairline bg-ink-2'}`}>
+                  {'highlight' in p && p.highlight && <span className="absolute -top-3 left-6 rounded-full bg-cafe px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-ink">Mais escolhido</span>}
+                  <h3 className="font-display text-3xl font-semibold">{p.name}</h3>
                   <p className="mt-1 font-display text-xl text-brass-light">{p.price}</p>
                   <ul className="mt-5 flex-1 space-y-2.5 text-sm text-ivory/85">
                     {p.perks.map((perk) => (
@@ -60,7 +60,7 @@ export function Club() {
                       </li>
                     ))}
                   </ul>
-                  <a href={whatsappLink(waMessages.plan(p.name))} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-brass/50 text-[14px] font-semibold text-brass-light transition-colors hover:bg-brass hover:text-ink">
+                  <a href={whatsappLink(waMessages.plan(p.name))} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brass/50 text-[14px] font-semibold text-brass-light transition-colors hover:bg-brass hover:text-ink">
                     <Icon name="whatsapp" className="h-[18px] w-[18px]" /> Quero assinar
                   </a>
                 </article>
